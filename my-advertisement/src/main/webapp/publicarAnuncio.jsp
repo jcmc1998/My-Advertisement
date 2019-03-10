@@ -4,8 +4,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./js/publicarAnuncio.js"></script>
+        <c:import url="bs.jsp" />
         <title>Publicar Anuncio</title>
     </head>
     <body>
@@ -24,15 +24,18 @@
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre"  id="nombre" onkeyup="checkNombre()">
+                        <div id="statusNombre"> </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Apellido</label>
-                        <input type="text" class="form-control" name="apellido" placeholder="Apellido" required>
+                        <input type="text" class="form-control" name="apellido" placeholder="Apellido" id="apellido" onkeyup="checkApellido()">
+                        <div id="statusApellido"> </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        <input type="email" class="form-control" name="email" placeholder="Email" onkeyup="checkEmail()" id="email">
+                        <div id="statusEmail"> </div>
                     </div>
                 </div>
                 <div class="row">
@@ -43,17 +46,18 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label>Título</label>
-                        <input type="text" class="form-control" name="titulo" placeholder="Titulo" required>
+                        <input type="text" class="form-control" name="titulo" placeholder="Titulo" id="titulo" onkeyup="checkTitulo()">
+                        <div id="statusTitulo"> </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label style="padding-bottom: 6px">Tipo</label>
                         <div class="form-group">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="tipo" value="Solicitante">
+                                <input class="form-check-input" type="radio" name="tipo" id="solicitante" onclick="checkTipo()" value="Solicitante" checked>
                                 <label class="form-check-label" style="padding-right: 20px">Solicitante</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="tipo" value="Proveedor">
+                                <input class="form-check-input" type="radio" name="tipo" id="proveedor" onclick="checkTipo()" value="Proveedor">
                                 <label class="form-check-label">Proveedor</label>
                             </div>
                         </div>
@@ -62,16 +66,18 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label>Precio</label>
-                        <input type="text" class="form-control" name="precio" placeholder="Precio" required>
+                        <input type="text" class="form-control" name="precio" placeholder="$" id="precio" onkeyup="checkPrecio()" disabled>
+                        <div id="statusPrecio"> </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-12">
                         <label>Descripción</label>
-                        <textarea class="form-control" rows="4" name="descripcion" placeholder="Descrición" style="resize: none"></textarea>
+                        <textarea class="form-control" rows="4" name="descripcion" placeholder="Descrición" id="descripcion" style="resize: none" onkeyup="checkDescripcion()"></textarea>
+                        <div id="statusDescripcion"> </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" style="margin-top: 20px; background-color: #212529;">Publicar</button>
+                <button class="btn btn-primary btn-lg btn-block" style="margin-top: 20px; background-color: #212529;" disabled="disabled" id="publicarBtn" type="submit">Publicar</button>
                 <br>
             </form>
         </div>

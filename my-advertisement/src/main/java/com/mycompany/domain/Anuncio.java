@@ -1,4 +1,6 @@
-package com.mycompany.anuncio;
+package com.mycompany.domain;
+
+import com.mycompany.domain.Propietario;
 
 public abstract class Anuncio {
 

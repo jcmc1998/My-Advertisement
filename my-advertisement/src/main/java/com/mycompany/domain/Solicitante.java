@@ -1,4 +1,7 @@
-package com.mycompany.anuncio;
+package com.mycompany.domain;
+
+import com.mycompany.domain.Anuncio;
+import com.mycompany.domain.Propietario;
 
 public class Solicitante extends Anuncio {
 

@@ -1,4 +1,4 @@
-package com.mycompany.anuncio;
+package com.mycompany.domain;
 
 public class Propietario {
 
